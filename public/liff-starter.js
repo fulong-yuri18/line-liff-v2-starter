@@ -126,7 +126,17 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'bubble',
-                'header': "messagelink",
+                "body": {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": "liff message",
+                            "wrap": true
+                        }
+                    ]
+                },
                 'footer': {
                     "type": "box",
                     "contents": [
