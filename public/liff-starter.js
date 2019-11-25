@@ -125,8 +125,21 @@ function registerButtonHandlers() {
             sendAlertIfNotInClient();
         } else {
             liff.sendMessages([{
-                'type': 'text',
-                'text': "You've successfully sent a message! Hooray!"
+                'type': 'bubble',
+                'header': "messagelink",
+                'footer': {
+                    "type": "box",
+                    "contents": [
+                    {
+                        "type": "button",
+                        "style": "primary",
+                        "action": {
+                        "type": "uri",
+                        "label": "My liff Starter",
+                        "uri": "line://app/1653566328-N1Wp5kEr"
+                        }
+                    }
+                ]},
             }]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
