@@ -124,34 +124,39 @@ function registerButtonHandlers() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
         } else {
-            liff.sendMessages([{
-                "type": "bubble",
-                "body": {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "contents": [
-                        {
-                            "type": "text",
-                            "text": "liffアプリを起動してください。",
-                            "wrap": true
+            liff.sendMessages([
+                {
+                    "type": "flex",
+                    "altText": "this is a flex message",
+                    "contents": {
+                        "type": "bubble",
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "liffアプリを起動してください。",
+                                    "wrap": true
+                            }]
+                        },
+                        "footer": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                            {
+                                "type": "button",
+                                "style": "primary",
+                                "action": {
+                                    "type": "uri",
+                                    "label": "起動する",
+                                    "uri": "line://app/1653566328-N1Wp5kEr"
+                                }
+                            }]
                         }
-                    ]
-                },
-                "footer": {
-                    "type": "box",
-                    "layout": "horizontal",
-                    "contents": [
-                    {
-                        "type": "button",
-                        "style": "primary",
-                        "action": {
-                            "type": "uri",
-                            "label": "My liff Starter",
-                            "uri": "line://app/1653566328-N1Wp5kEr"
-                        }
-                    }]
+                    }
                 }
-            }]).then(function() {
+            ]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
                 window.alert('Error sending message: ' + error);
