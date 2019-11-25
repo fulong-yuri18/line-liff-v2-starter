@@ -125,31 +125,32 @@ function registerButtonHandlers() {
             sendAlertIfNotInClient();
         } else {
             liff.sendMessages([{
-                'type': 'bubble',
+                "type": "bubble",
                 "body": {
                     "type": "box",
                     "layout": "horizontal",
                     "contents": [
                         {
                             "type": "text",
-                            "text": "liff message",
+                            "text": "liffアプリを起動してください。",
                             "wrap": true
                         }
                     ]
                 },
-                'footer': {
+                "footer": {
                     "type": "box",
+                    "layout": "horizontal",
                     "contents": [
                     {
                         "type": "button",
                         "style": "primary",
                         "action": {
-                        "type": "uri",
-                        "label": "My liff Starter",
-                        "uri": "line://app/1653566328-N1Wp5kEr"
+                            "type": "uri",
+                            "label": "My liff Starter",
+                            "uri": "line://app/1653566328-N1Wp5kEr"
                         }
-                    }
-                ]},
+                    }]
+                }
             }]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
